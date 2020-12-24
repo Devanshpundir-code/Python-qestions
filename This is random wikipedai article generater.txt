@@ -1,0 +1,40 @@
+#Guys this code is preety long can be done in just 10-15 lines
+#i did with long code to make u understand fully
+
+
+import webbrowser
+import sys
+import time
+import wikipedia # if this gives error >>write in terminal "pip install wikipedia" >> may be u dont have wheel for it
+material = wikipedia.random(1) # this will give us a random topic
+print(material)         #this will print that random topic
+ask = input("Do you want to read about this ?\n >:")    #it asks about u to print a short note on that topic
+if ask == "yes" and "Yes":
+    print(wikipedia.summary(material))
+    i = input("Do you want to read at official page?(Y/N)")
+    if i == "Y":
+       url = wikipedia.page(material).url       #this will find url
+       webbrowser.open(url, new=2)  #and this will open yr microsoft edge automatically >> if it is not opening make sure u open a empty tab on it
+    elif i == "N":
+        sys.exit()   #this is a funtion of sys. as we have imported
+
+
+elif ask == "no" and "No":
+    for i in range(30):
+        another = input("Do you want to read another article(Y/N) ?\n :")
+        if another == "Y":
+            j = wikipedia.random(1)
+            print(j)
+            time.sleep(2)
+            print(wikipedia.summary(j))
+            time.sleep(2)
+            i2 = input("Do you want to read at official page?(Y/N)")
+            if i2 == "Y":
+                url = wikipedia.page(j).url
+                webbrowser.open(url, new=2)
+
+        elif another == "N":
+            sys.exit()
+
+
+            #hope u guys clr about this bye ..
