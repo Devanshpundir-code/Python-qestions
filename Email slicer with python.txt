@@ -1,0 +1,12 @@
+#Email slicer
+#Input
+email = input("enter your email: ").strip()  #<< tis will cancel the spaces in emal as u know there is no spaces in email
+
+#Now we will do slicing
+user_name = email[:email.index("@")]
+domin_name = email[email.index("@")+1:]
+#now we will put this in a representing manner 
+result_print = "your user name is '{}' n\ and your domin is '{}'".format(user_name, domin_name)
+
+#now simply we will print it 
+print(result_print)
