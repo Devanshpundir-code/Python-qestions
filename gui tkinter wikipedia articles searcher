@@ -1,0 +1,24 @@
+import webbrowser
+import wikipedia
+import webbrowser
+from tkinter import *
+from tkinter import Entry
+root = Tk()
+def search():
+    label_summary = Label(text="Summary:" + wikipedia.summary(entry_box.get()), relief="solid"
+    , font=("bold", 9)).place(x=20, y=200)
+
+
+def websearch():
+    url = wikipedia.page(entry_box.get()).url
+    webbrowser.open(url, new=2)
+
+entry_box = Entry(root, text = "Search" ,width = 30)
+entry_box.place(x=500, y= 0)
+btn_search = Button(text = "Search", font = ("bold ", 10), borderwidth = 8, bg = "black",
+                    width = 8, fg = "white", command = search).place(x=670, y = 0)
+btn_web = Button(text = "Do you want to read this at official website", relief = "flat" ,command = websearch, font = ("comic sans ms", 10)).place(x=500,y = 470)
+
+
+
+mainloop()
