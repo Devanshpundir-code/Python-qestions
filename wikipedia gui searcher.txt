@@ -1,0 +1,31 @@
+#import statements
+from tkinter import *
+import wikipedia
+import webbrowser
+#_____________________________
+
+root = Tk()
+root.geometry("1000x1000")
+root.config(bg = "light green")
+#-----------------------------------root window
+E = Entry(root)      #creating a entry widget
+E.place(x = 450, y = 10)
+
+#ALl fuctions defined here
+def btn_fuct():
+    k = wikipedia.summary(E.get(), sentences=4)
+    L.config(text = k )
+def click_page():
+    url = wikipedia.page(E.get())
+    webbrowser.open(url)
+#________________________________________
+#buttons and labels
+B = Button(text = "Search", command = btn_fuct)
+B.place(x = 540, y = 10)
+L = Label(root,text = " ")
+L.place(x = 13, y = 200)
+L.config(wraplength = 790)
+btn = Button(root, text = 'Wikipedia page', command = click_page)
+btn.place(x = 780, y = 20)
+
+mainloop()
