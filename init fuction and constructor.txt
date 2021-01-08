@@ -1,0 +1,11 @@
+class employee:
+    def __init__(self, aname ,asalary ,ajob):
+        self.name = aname
+        self.salary = asalary
+        self.job = ajob
+
+    def details(self):
+        print(f"this is {self.name} his salary is {self.salary} his job it{self.job}")
+harry = employee("Harry ", 499, "teacher")
+
+print(harry.salary)
